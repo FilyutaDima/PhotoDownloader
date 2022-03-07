@@ -88,3 +88,10 @@ fastlane/test_output
 # https://github.com/johnno1962/injectionforxcode
 
 iOSInjectionProject/
+*.xcworkspacedata
+PhotoDownloader/PhotoDownloader.xcworkspace/xcshareddata/swiftpm/Package.resolved
+PhotoDownloader/PhotoDownloader.xcodeproj/project.xcworkspace/xcshareddata/swiftpm/Package.resolved
+PhotoDownloader/PhotoDownloader.xcodeproj/project.xcworkspace/xcshareddata/swiftpm/Package.resolved
+PhotoDownloader/PhotoDownloader.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist
+PhotoDownloader/PhotoDownloader.xcodeproj/project.xcworkspace/xcshareddata/swiftpm/Package.resolved
+PhotoDownloader/Pods/Alamofire/LICENSE
