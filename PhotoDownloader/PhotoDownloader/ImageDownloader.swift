@@ -1,50 +1,41 @@
 //
-//  ExtensionsImageView.swift
+//  ImageDownloader.swift
 //  PhotoDownloader
 //
-//  Created by Dmitry on 28.02.22.
+//  Created by Dmitry on 1.03.22.
 //
 
-import Foundation
 import UIKit
 
-extension UIImageView {
+class ImageDownloader {
     
-    func imageFromServerURL(_ URLString: String,
-                            placeHolder: UIImage?,
+    func imageFromServerURL(from URLString: String,
                             completionHandlerError: ((Error) -> ())?,
-                            completionHandlerSuccess: (() -> ())?) {
-        self.image = nil
+                            completionHandlerSuccess: ((UIImage?) -> ())?) {
         
         if let url = URL(string: URLString) {
             URLSession.shared.dataTask(with: url) { data, response, error in
-                DispatchQueue.main.async { [self] in
+                DispatchQueue.main.async {
                     
                     if let error = error {
                         
                         if let completionHandlerError = completionHandlerError {
                             completionHandlerError(error)
                         }
-                        
-                        image = nil
-                        self.image = placeHolder
-                        
-                        
                     }
                     
                     if let data = data,
                        let image = UIImage(data: data) {
                         
                         if let completionHandlerSuccess = completionHandlerSuccess {
-                            completionHandlerSuccess()
+                            completionHandlerSuccess(image)
                         }
-                        
-                        self.image = image
                         
                     } else {
                         
-                        self.image = placeHolder
-                        image = nil
+                        if let completionHandlerSuccess = completionHandlerSuccess {
+                            completionHandlerSuccess(nil)
+                        }
                     }
                 }
             }.resume()

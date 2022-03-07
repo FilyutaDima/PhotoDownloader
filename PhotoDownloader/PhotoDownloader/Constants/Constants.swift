@@ -48,4 +48,19 @@ class Constants {
     static var cancelAlertAction = "Cancel"
     
     static var reuseIdentifier = "Cell"
+    
+    static let showDetail = "ShowDetail"
+    static let showUsers = "ShowUsers"
+    static let showImageDownloader = "ShowImageDownloader"
+    static let showPosts = "ShowPosts"
+    static let showComments = "ShowComments"
+    static let addPost = "AddPost"
+    static let addComment = "AddComment"
+    static let showAlbums = "ShowAlbums"
+    static let showPhotos = "ShowPhotos"
+    static let showPhoto = "ShowPhoto"
+    static let showMap = "ShowMap"
+    
+    static var title = "title"
+    static var id = "id"
 }
