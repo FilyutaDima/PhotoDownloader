@@ -70,7 +70,6 @@ class CommentsTableViewController: UITableViewController {
     
     private func updateData() {
         getComments()
-        tableView.reloadData()
     }
     
     @IBAction func unwindToCommentsTVC(_ unwindSegue: UIStoryboardSegue) { }

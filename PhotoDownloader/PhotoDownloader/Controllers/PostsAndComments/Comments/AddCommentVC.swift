@@ -24,9 +24,6 @@ class AddCommentVC: UIViewController {
     
     @IBAction func addCommentAction(_ sender: Any) {
         addComment()
-        
-        guard let updateComments = updateComments else { return }
-        updateComments()
     }
     
     private func addComment() {
@@ -52,7 +49,8 @@ class AddCommentVC: UIViewController {
                 
                 if let data = data {
                     DispatchQueue.main.async {
-                        self?.navigationController?.popViewController(animated: true)
+                        guard let updateComments = self?.updateComments else { return }
+                        updateComments()
                     }
                 } else if let error = error {
                     print(error)

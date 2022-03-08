@@ -22,9 +22,6 @@ class AddPostViewController: UIViewController {
     @IBOutlet weak var bodyTextView: UITextView!
     @IBAction func addPostAction(_ sender: Any) {
         addPost()
-        
-        guard let updatePosts = updatePosts else { return }
-        updatePosts()
     }
     
     private func addPost() {
@@ -49,7 +46,8 @@ class AddPostViewController: UIViewController {
                 
                 if let data = data {
                     DispatchQueue.main.async {
-                        self?.navigationController?.popViewController(animated: true)
+                        guard let updatePosts = self?.updatePosts else { return }
+                        updatePosts()
                     }
                 } else if let error = error {
                     print(error)

@@ -79,7 +79,6 @@ class PostsTableViewController: UITableViewController {
     
     private func updateData() {
         getPosts()
-        tableView.reloadData()
     }
     
     @objc private func addTapped() {
